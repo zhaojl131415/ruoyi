@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.biz.mapper.BizGermplasmMapper">
+    
+    <resultMap type="com.ruoyi.biz.domain.BizGermplasm" id="BizGermplasmResult">
+        <result property="id"    column="id"    />
+        <result property="code"    column="code"    />
+        <result property="specificName"    column="specific_name"    />
+        <result property="latinName"    column="latin_name"    />
+        <result property="coordinate"    column="coordinate"    />
+        <result property="longitude"    column="longitude"    />
+        <result property="latitude"    column="latitude"    />
+        <result property="elevation"    column="elevation"    />
+        <result property="lifeForm"    column="life_form"    />
+        <result property="medicinalName"    column="medicinal_name"    />
+        <result property="collectionAddress"    column="collection_address"    />
+        <result property="collectionTime"    column="collection_time"    />
+        <result property="characteristics"    column="characteristics"    />
+        <result property="preservationLocation"    column="preservation_location"    />
+        <result property="plantPhotograph"    column="plant_photograph"    />
+        <result property="voucherSpecimen"    column="voucher_specimen"    />
+        <result property="remark"    column="remark"    />
+        <result property="createBy"   column="create_by"   />
+        <result property="createTime" column="create_time" />
+        <result property="updateBy"   column="update_by"   />
+        <result property="updateTime" column="update_time" />
+        <result property="delFlag"    column="del_flag"    />
+    </resultMap>
+
+    <sql id="selectBizGermplasmVo">
+        select id, code, specific_name, latin_name, coordinate, longitude, latitude, elevation, life_form, medicinal_name, collection_address, collection_time, characteristics, preservation_location, plant_photograph, voucher_specimen, remark, create_by, update_by, create_time, update_time, del_flag from biz_germplasm
+    </sql>
+
+    <select id="selectBizGermplasmList" parameterType="com.ruoyi.biz.domain.BizGermplasm" resultMap="BizGermplasmResult">
+        <include refid="selectBizGermplasmVo"/>
+        <where>  
+            <if test="code != null  and code != ''"> and code = #{code}</if>
+            <if test="specificName != null  and specificName != ''"> and specific_name like concat('%', #{specificName}, '%')</if>
+            <if test="preservationLocation != null  and preservationLocation != ''"> and preservation_location = #{preservationLocation}</if>
+        </where>
+    </select>
+    
+    <select id="selectBizGermplasmById" parameterType="String" resultMap="BizGermplasmResult">
+        <include refid="selectBizGermplasmVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertBizGermplasm" parameterType="com.ruoyi.biz.domain.BizGermplasm" useGeneratedKeys="true" keyProperty="id">
+        insert into biz_germplasm
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="code != null and code != ''">code,</if>
+            <if test="specificName != null and specificName != ''">specific_name,</if>
+            <if test="latinName != null and latinName != ''">latin_name,</if>
+            <if test="coordinate != null">coordinate,</if>
+            <if test="longitude != null">longitude,</if>
+            <if test="latitude != null">latitude,</if>
+            <if test="elevation != null">elevation,</if>
+            <if test="lifeForm != null">life_form,</if>
+            <if test="medicinalName != null">medicinal_name,</if>
+            <if test="collectionAddress != null">collection_address,</if>
+            <if test="collectionTime != null">collection_time,</if>
+            <if test="characteristics != null">characteristics,</if>
+            <if test="preservationLocation != null and preservationLocation != ''">preservation_location,</if>
+            <if test="plantPhotograph != null">plant_photograph,</if>
+            <if test="voucherSpecimen != null">voucher_specimen,</if>
+            <if test="remark != null">remark,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="delFlag != null">del_flag,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="code != null and code != ''">#{code},</if>
+            <if test="specificName != null and specificName != ''">#{specificName},</if>
+            <if test="latinName != null and latinName != ''">#{latinName},</if>
+            <if test="coordinate != null">#{coordinate},</if>
+            <if test="longitude != null">#{longitude},</if>
+            <if test="latitude != null">#{latitude},</if>
+            <if test="elevation != null">#{elevation},</if>
+            <if test="lifeForm != null">#{lifeForm},</if>
+            <if test="medicinalName != null">#{medicinalName},</if>
+            <if test="collectionAddress != null">#{collectionAddress},</if>
+            <if test="collectionTime != null">#{collectionTime},</if>
+            <if test="characteristics != null">#{characteristics},</if>
+            <if test="preservationLocation != null and preservationLocation != ''">#{preservationLocation},</if>
+            <if test="plantPhotograph != null">#{plantPhotograph},</if>
+            <if test="voucherSpecimen != null">#{voucherSpecimen},</if>
+            <if test="remark != null">#{remark},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+         </trim>
+    </insert>
+
+    <update id="updateBizGermplasm" parameterType="com.ruoyi.biz.domain.BizGermplasm">
+        update biz_germplasm
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="code != null and code != ''">code = #{code},</if>
+            <if test="specificName != null and specificName != ''">specific_name = #{specificName},</if>
+            <if test="latinName != null and latinName != ''">latin_name = #{latinName},</if>
+            <if test="coordinate != null">coordinate = #{coordinate},</if>
+            <if test="longitude != null">longitude = #{longitude},</if>
+            <if test="latitude != null">latitude = #{latitude},</if>
+            <if test="elevation != null">elevation = #{elevation},</if>
+            <if test="lifeForm != null">life_form = #{lifeForm},</if>
+            <if test="medicinalName != null">medicinal_name = #{medicinalName},</if>
+            <if test="collectionAddress != null">collection_address = #{collectionAddress},</if>
+            <if test="collectionTime != null">collection_time = #{collectionTime},</if>
+            <if test="characteristics != null">characteristics = #{characteristics},</if>
+            <if test="preservationLocation != null and preservationLocation != ''">preservation_location = #{preservationLocation},</if>
+            <if test="plantPhotograph != null">plant_photograph = #{plantPhotograph},</if>
+            <if test="voucherSpecimen != null">voucher_specimen = #{voucherSpecimen},</if>
+            <if test="remark != null">remark = #{remark},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteBizGermplasmById" parameterType="String">
+        delete from biz_germplasm where id = #{id}
+    </delete>
+
+    <delete id="deleteBizGermplasmByIds" parameterType="String">
+        delete from biz_germplasm where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+
+</mapper>
