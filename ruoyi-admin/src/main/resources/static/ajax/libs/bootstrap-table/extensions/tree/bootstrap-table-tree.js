@@ -1,6 +1,6 @@
 /**
  * 基于bootstrapTreeTable/bootstrap-table-treegrid修改
- * Copyright (c) 2019 ruoyi
+ * Copyright (c) 2019 acm
  */
 (function($) {
     "use strict";
@@ -72,7 +72,7 @@
             var $rightToolbar = $('<div class="btn-group tool-right">');
             $toolbar.append($rightToolbar);
             target.parent().before($toolbar);
-            // ruoyi 是否显示检索信息
+            // acm 是否显示检索信息
             if (options.showSearch) {
                 var $searchBtn = $('<button class="btn btn-default btn-outline" type="button" aria-label="search" title="搜索"><i class="glyphicon glyphicon-search"></i></button>');
                 $rightToolbar.append($searchBtn);
@@ -908,7 +908,7 @@
                 $input.prop("checked", '');
             }
         }
-        // ruoyi 解析数据，支持多层级访问
+        // acm 解析数据，支持多层级访问
         var getItemField = function (item, field) {
             var value = item;
 
@@ -921,7 +921,7 @@
             }
             return value;
         };
-        // ruoyi 发起对目标(target)函数的调用
+        // acm 发起对目标(target)函数的调用
         var calculateObjectValue = function (self, name, args, defaultValue) {
             var func = name;
 

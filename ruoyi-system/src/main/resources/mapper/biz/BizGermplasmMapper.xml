@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.ruoyi.biz.mapper.BizGermplasmMapper">
+<mapper namespace="com.acm.biz.mapper.BizGermplasmMapper">
     
-    <resultMap type="com.ruoyi.biz.domain.BizGermplasm" id="BizGermplasmResult">
+    <resultMap type="com.acm.biz.domain.BizGermplasm" id="BizGermplasmResult">
         <result property="id"    column="id"    />
         <result property="code"    column="code"    />
         <result property="specificName"    column="specific_name"    />
@@ -33,7 +33,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         select id, code, specific_name, latin_name, coordinate, longitude, latitude, elevation, life_form, medicinal_name, collection_address, collection_time, characteristics, preservation_location, plant_photograph, voucher_specimen, remark, create_by, update_by, create_time, update_time, del_flag from biz_germplasm
     </sql>
 
-    <select id="selectBizGermplasmList" parameterType="com.ruoyi.biz.domain.BizGermplasm" resultMap="BizGermplasmResult">
+    <select id="selectBizGermplasmList" parameterType="com.acm.biz.domain.BizGermplasm" resultMap="BizGermplasmResult">
         <include refid="selectBizGermplasmVo"/>
         <where>  
             <if test="code != null  and code != ''"> and code = #{code}</if>
@@ -47,7 +47,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         where id = #{id}
     </select>
         
-    <insert id="insertBizGermplasm" parameterType="com.ruoyi.biz.domain.BizGermplasm" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insertBizGermplasm" parameterType="com.acm.biz.domain.BizGermplasm" useGeneratedKeys="true" keyProperty="id">
         insert into biz_germplasm
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="code != null and code != ''">code,</if>
@@ -97,7 +97,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
          </trim>
     </insert>
 
-    <update id="updateBizGermplasm" parameterType="com.ruoyi.biz.domain.BizGermplasm">
+    <update id="updateBizGermplasm" parameterType="com.acm.biz.domain.BizGermplasm">
         update biz_germplasm
         <trim prefix="SET" suffixOverrides=",">
             <if test="code != null and code != ''">code = #{code},</if>
