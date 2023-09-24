@@ -3,11 +3,12 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.ruoyi</groupId>
-    <artifactId>ruoyi</artifactId>
+    <groupId>com.acm</groupId>
+    <artifactId>acm</artifactId>
     <version>1.0.0</version>
 
-    <name>ruoyi</name>
+    <name>acm</name>
+    <description>湖南省中医药研究院中药资源研究所种质资源信息管理系统</description>
     
     <properties>
         <acm.version>1.0.0</acm.version>
@@ -148,36 +149,36 @@
 
             <!-- 定时任务-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-quartz</artifactId>
+                <groupId>com.acm</groupId>
+                <artifactId>acm-quartz</artifactId>
                 <version>${acm.version}</version>
             </dependency>
 
             <!-- 代码生成-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-generator</artifactId>
+                <groupId>com.acm</groupId>
+                <artifactId>acm-generator</artifactId>
                 <version>${acm.version}</version>
             </dependency>
 
             <!-- 核心模块-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-framework</artifactId>
+                <groupId>com.acm</groupId>
+                <artifactId>acm-framework</artifactId>
                 <version>${acm.version}</version>
             </dependency>
 
             <!-- 系统模块-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-system</artifactId>
+                <groupId>com.acm</groupId>
+                <artifactId>acm-system</artifactId>
                 <version>${acm.version}</version>
             </dependency>
 
             <!-- 通用工具-->
             <dependency>
-                <groupId>com.ruoyi</groupId>
-                <artifactId>ruoyi-common</artifactId>
+                <groupId>com.acm</groupId>
+                <artifactId>acm-common</artifactId>
                 <version>${acm.version}</version>
             </dependency>
 
@@ -185,12 +186,12 @@
     </dependencyManagement>
 
     <modules>
-        <module>ruoyi-admin</module>
-        <module>ruoyi-framework</module>
-        <module>ruoyi-system</module>
-        <module>ruoyi-quartz</module>
-        <module>ruoyi-generator</module>
-        <module>ruoyi-common</module>
+        <module>acm-admin</module>
+        <module>acm-framework</module>
+        <module>acm-system</module>
+        <module>acm-quartz</module>
+        <module>acm-generator</module>
+        <module>acm-common</module>
     </modules>
     <packaging>pom</packaging>
 
