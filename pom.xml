@@ -5,14 +5,12 @@
 
     <groupId>com.ruoyi</groupId>
     <artifactId>ruoyi</artifactId>
-    <version>4.7.7</version>
+    <version>1.0.0</version>
 
     <name>ruoyi</name>
-    <url>http://www.ruoyi.vip</url>
-    <description>若依管理系统</description>
     
     <properties>
-        <ruoyi.version>4.7.7</ruoyi.version>
+        <acm.version>1.0.0</acm.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
@@ -152,35 +150,35 @@
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>ruoyi-quartz</artifactId>
-                <version>${ruoyi.version}</version>
+                <version>${acm.version}</version>
             </dependency>
 
             <!-- 代码生成-->
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>ruoyi-generator</artifactId>
-                <version>${ruoyi.version}</version>
+                <version>${acm.version}</version>
             </dependency>
 
             <!-- 核心模块-->
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>ruoyi-framework</artifactId>
-                <version>${ruoyi.version}</version>
+                <version>${acm.version}</version>
             </dependency>
 
             <!-- 系统模块-->
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>ruoyi-system</artifactId>
-                <version>${ruoyi.version}</version>
+                <version>${acm.version}</version>
             </dependency>
 
             <!-- 通用工具-->
             <dependency>
                 <groupId>com.ruoyi</groupId>
                 <artifactId>ruoyi-common</artifactId>
-                <version>${ruoyi.version}</version>
+                <version>${acm.version}</version>
             </dependency>
 
         </dependencies>
