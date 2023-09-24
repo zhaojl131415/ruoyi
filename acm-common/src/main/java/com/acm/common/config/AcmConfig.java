@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  */
 @Component
 @ConfigurationProperties(prefix = "acm")
-public class RuoYiConfig
+public class AcmConfig
 {
     /** 项目名称 */
     private static String name;
@@ -37,7 +37,7 @@ public class RuoYiConfig
 
     public void setName(String name)
     {
-        RuoYiConfig.name = name;
+        AcmConfig.name = name;
     }
 
     public static String getVersion()
@@ -47,7 +47,7 @@ public class RuoYiConfig
 
     public void setVersion(String version)
     {
-        RuoYiConfig.version = version;
+        AcmConfig.version = version;
     }
 
     public static String getCopyrightYear()
@@ -57,7 +57,7 @@ public class RuoYiConfig
 
     public void setCopyrightYear(String copyrightYear)
     {
-        RuoYiConfig.copyrightYear = copyrightYear;
+        AcmConfig.copyrightYear = copyrightYear;
     }
 
     public static boolean isDemoEnabled()
@@ -67,7 +67,7 @@ public class RuoYiConfig
 
     public void setDemoEnabled(boolean demoEnabled)
     {
-        RuoYiConfig.demoEnabled = demoEnabled;
+        AcmConfig.demoEnabled = demoEnabled;
     }
 
     public static String getProfile()
@@ -77,7 +77,7 @@ public class RuoYiConfig
 
     public void setProfile(String profile)
     {
-        RuoYiConfig.profile = profile;
+        AcmConfig.profile = profile;
     }
 
     public static boolean isAddressEnabled()
@@ -87,7 +87,7 @@ public class RuoYiConfig
 
     public void setAddressEnabled(boolean addressEnabled)
     {
-        RuoYiConfig.addressEnabled = addressEnabled;
+        AcmConfig.addressEnabled = addressEnabled;
     }
 
     /**

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import com.acm.common.annotation.Log;
-import com.acm.common.config.RuoYiConfig;
+import com.acm.common.config.AcmConfig;
 import com.acm.common.core.controller.BaseController;
 import com.acm.common.core.domain.AjaxResult;
 import com.acm.common.core.domain.entity.SysUser;
@@ -162,7 +162,7 @@ public class SysProfileController extends BaseController
         {
             if (!file.isEmpty())
             {
-                String avatar = FileUploadUtils.upload(RuoYiConfig.getAvatarPath(), file, MimeTypeUtils.IMAGE_EXTENSION);
+                String avatar = FileUploadUtils.upload(AcmConfig.getAvatarPath(), file, MimeTypeUtils.IMAGE_EXTENSION);
                 currentUser.setAvatar(avatar);
                 if (userService.updateUserInfo(currentUser) > 0)
                 {

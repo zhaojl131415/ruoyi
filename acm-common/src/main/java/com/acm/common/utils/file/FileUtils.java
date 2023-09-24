@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.ArrayUtils;
-import com.acm.common.config.RuoYiConfig;
+import com.acm.common.config.AcmConfig;
 import com.acm.common.utils.DateUtils;
 import com.acm.common.utils.StringUtils;
 import com.acm.common.utils.uuid.IdUtils;
@@ -73,7 +73,7 @@ public class FileUtils
      */
     public static String writeImportBytes(byte[] data) throws IOException
     {
-        return writeBytes(data, RuoYiConfig.getImportPath());
+        return writeBytes(data, AcmConfig.getImportPath());
     }
 
     /**
